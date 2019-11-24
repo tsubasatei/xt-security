@@ -2,12 +2,16 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql:///mybatis
+    url: jdbc:mysql:///mybatis?useSSL=false
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 # 关闭 session
   session:
     store-type: none
+
+
+  thymeleaf:
+    cache: false
 
 # 默认登录验证
 security:
