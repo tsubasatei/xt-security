@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql:///mybatis
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 关闭 session
+  session:
+    store-type: none
+
+# 默认登录验证
+security:
+  basic:
+    enabled: false
