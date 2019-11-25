@@ -1,6 +1,6 @@
 package com.xt.config;
 
-import com.xt.interceptor.TimeInterceptor;
+import com.xt.web.interceptor.TimeInterceptor;
 import com.xt.web.filter.TimeFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;

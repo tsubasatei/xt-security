@@ -1,4 +1,4 @@
-package com.xt.interceptor;
+package com.xt.web.interceptor;
 
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
