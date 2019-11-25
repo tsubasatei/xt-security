@@ -38,6 +38,7 @@ public class UserController {
     @GetMapping("/{id:\\d+}")
     @JsonView(User.UserDetailView.class)
     public User findOne(@PathVariable(value = "id") Integer id) {
+        System.out.println("进入findOne服务");
         if (id == 0) {
             throw new UserNotExistException(id);
         }
