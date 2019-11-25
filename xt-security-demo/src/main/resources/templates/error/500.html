@@ -7,12 +7,13 @@
 </head>
 <body>
     <h2>服务器内部错误</h2>
-    <h1>status:[[${status}]]</h1>
-    <h2>timestamp:[[${timestamp}]]</h2>
-    <h2>exception:[[${exception}]]</h2>
-    <h2>message:[[${message}]]</h2>
-    <h2>id: [[${ext.id}]]</h2>
-    <h2>msg: [[${ext.msg}]]</h2>
-    <h2>pro: [[${pro}]]</h2>
+    <p th:text="'timestamp: ' + ${timestamp} " />
+    <p th:text="'status: ' + ${status} " />
+    <p th:text="'error: ' + ${error} " />
+    <p th:text="'exception: ' + ${exception} " />
+    <p th:text="'message: ' + ${message} " />
+    <p th:text="'id: ' + ${ext.id} " />
+    <p th:text="'msg: ' + ${ext.msg} " />
+    <p th:text="'pro: ' + ${pro} " />
 </body>
 </html>

@@ -9,11 +9,11 @@
 
     <h1>404</h1>
     <h2>您所访问的页面不存在</h2>
-    <h2>timestamp: [[${timestamp}]]</h2>
-    <h2>status: [[${status}]]</h2>
-    <h2>error: [[${error}]]</h2>
-    <h2>exception: [[${exception}]]</h2>
-    <h2>message: [[${message}]]</h2>
+    <p th:text="'timestamp: ' + ${timestamp} " />
+    <p th:text="'status: ' + ${status} " />
+    <p th:text="'error: ' + ${error} " />
+    <p th:text="'exception: ' + ${exception} " />
+    <p th:text="'message: ' + ${message} " />
 
 </body>
 
