@@ -17,3 +17,5 @@ spring:
 security:
   basic:
     enabled: false
+server:
+  port: 9001

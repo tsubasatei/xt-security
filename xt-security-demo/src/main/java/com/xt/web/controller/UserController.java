@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonView;
 import com.xt.entity.User;
 import com.xt.entity.UserQueryCondition;
 import com.xt.exception.UserNotExistException;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.apache.commons.lang.builder.ReflectionToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 import org.springframework.data.domain.Pageable;
@@ -21,6 +23,7 @@ public class UserController {
 
     @JsonView(User.UserSimpleView.class)
     @GetMapping
+    @ApiOperation(value = "用户查询列表服务")
     public List<User> list(/*@RequestParam(name = "username", required = false, defaultValue = "xt") String username, */
                             UserQueryCondition userQueryCondition, @PageableDefault(page = 1, size = 10, sort = "username, asc") Pageable pageable) {
         System.out.println("查询条件：" + ReflectionToStringBuilder.toString(userQueryCondition, ToStringStyle.MULTI_LINE_STYLE));
@@ -37,7 +40,7 @@ public class UserController {
     // id ：只能接收数字
     @GetMapping("/{id:\\d+}")
     @JsonView(User.UserDetailView.class)
-    public User findOne(@PathVariable(value = "id") Integer id) {
+    public User findOne(@ApiParam("用户id") @PathVariable(value = "id") Integer id) {
         System.out.println("进入findOne服务");
         if (id == 0) {
             throw new UserNotExistException(id);
