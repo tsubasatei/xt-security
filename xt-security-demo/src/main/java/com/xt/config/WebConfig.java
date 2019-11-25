@@ -5,6 +5,7 @@ import com.xt.web.filter.TimeFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -19,6 +20,14 @@ import java.util.Arrays;
  */
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
+
+    // 异步支持
+    @Override
+    public void configureAsyncSupport(AsyncSupportConfigurer configurer) {
+//        configurer.registerCallableInterceptors();
+//        configurer.registerDeferredResultInterceptors();
+
+    }
 
     @Bean
     public FilterRegistrationBean timeFilter() {
