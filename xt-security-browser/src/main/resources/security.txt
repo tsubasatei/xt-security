@@ -1,4 +1,4 @@
-
+认证处理
 1. security 过滤器链
 org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
 org.springframework.security.web.authentication.www.BasicAuthenticationFilter
@@ -10,3 +10,20 @@ org.springframework.security.core.userdetails.UserDetailsService
 
 3. 加密
 org.springframework.security.crypto.password.PasswordEncoder
+
+认证流程：
+    1. UsernamePasswordAuthenticationFilter --》UsernamePasswordAuthenticationToken--》Authentication
+    2. AuthenticationManager
+    3. AuthenticationProvider --》DaoAuthenticationProvider --> AbstractUserDetailsAuthenticationProvider
+            retrieveUser --> loadedUser = this.getUserDetailsService().loadUserByUsername(username);
+    4. UserDetails
+    5. Authentication(已认证)
+
+认证请求在多个请求之间共享：
+    1. SecurityContextHolder：ThreadLocal 的封装
+    2. SecurityContext
+    3. AuthenticationSuccessHandler
+    4. SecurityContextPersistenceFilter : 过滤器最前面，
+        检查 session 中是否有 SecurityContext，若有，拿出放线程中，出去时检查线程中若有，拿出放 session 中
+
+获取认证用户信息

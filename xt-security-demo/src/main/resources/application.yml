@@ -13,6 +13,7 @@ spring:
   thymeleaf:
     cache: false
 
+
 # 默认登录验证
 #security:
 #  basic:
@@ -21,3 +22,10 @@ spring:
 
 server:
   port: 9001
+
+
+xt:
+  security:
+    browser:
+#      loginPage: /demo-singIn.html
+       loginType: REDIRECT

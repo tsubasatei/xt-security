@@ -17,7 +17,7 @@ public class ControllerExceptionHandler {
      * handleException：会处理所有 Controller 层抛出的 UserNotExistException 及其子类的异常
      *
      */
-    @ExceptionHandler
+    @ExceptionHandler(UserNotExistException.class)
     public String handlerException(UserNotExistException ex, HttpServletRequest request){
         Map<String, Object> map = new HashMap<>();
         map.put("id", ex.getId());
