@@ -1,0 +1,12 @@
+
+1. security 过滤器链
+org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
+org.springframework.security.web.authentication.www.BasicAuthenticationFilter
+org.springframework.security.web.access.ExceptionTranslationFilter
+org.springframework.security.web.access.intercept.FilterSecurityInterceptor
+
+2. 用户登录信息
+org.springframework.security.core.userdetails.UserDetailsService
+
+3. 加密
+org.springframework.security.crypto.password.PasswordEncoder

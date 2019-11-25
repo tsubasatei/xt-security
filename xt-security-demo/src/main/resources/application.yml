@@ -14,8 +14,10 @@ spring:
     cache: false
 
 # 默认登录验证
-security:
-  basic:
-    enabled: false
+#security:
+#  basic:
+#    enabled: false
+
+
 server:
   port: 9001
