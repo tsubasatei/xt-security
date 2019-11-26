@@ -27,3 +27,12 @@ org.springframework.security.crypto.password.PasswordEncoder
         检查 session 中是否有 SecurityContext，若有，拿出放线程中，出去时检查线程中若有，拿出放 session 中
 
 获取认证用户信息
+
+
+记住我原理：
+    浏览器 （认证请求）--》UsernamePasswordAuthenticationFilter（认证成功）--》
+        RememberMeService (TokenRepository) --> 1. 将 Token 写入数据库
+                                                2. 将 Token 写入浏览器的 Cookie
+    浏览器 （服务请求）--》RememberMeAuthenticationFilter (读取 Cookie 中的 Token) --》
+
+        RememberMeService (TokenRepository) --> 1. 到数据库 查找Token --》UserDetailsService
