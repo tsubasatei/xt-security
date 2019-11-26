@@ -24,8 +24,8 @@ server:
   port: 9001
 
 
-xt:
-  security:
-    browser:
-#      loginPage: /demo-singIn.html
-       loginType: REDIRECT
+#xt:
+#  security:
+#    browser:
+##      loginPage: /demo-singIn.html
+#       loginType: REDIRECT
