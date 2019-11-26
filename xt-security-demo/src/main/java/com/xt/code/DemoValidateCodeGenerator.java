@@ -1,8 +1,8 @@
 /*
 package com.xt.code;
 
-import com.xt.security.core.validate.code.ImageCode;
-import com.xt.security.core.validate.code.ValidateCodeGenerator;
+import com.xt.security.core.validate.code.image.ImageCode;
+import com.xt.security.core.validate.code.generator.ValidateCodeGenerator;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.ServletWebRequest;
 

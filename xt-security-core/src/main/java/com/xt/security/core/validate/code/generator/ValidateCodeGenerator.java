@@ -1,5 +1,6 @@
-package com.xt.security.core.validate.code;
+package com.xt.security.core.validate.code.generator;
 
+import com.xt.security.core.validate.code.bean.ValidateCode;
 import org.springframework.web.context.request.ServletWebRequest;
 
 /**
@@ -8,9 +9,9 @@ import org.springframework.web.context.request.ServletWebRequest;
 public interface ValidateCodeGenerator {
 
     /**
-     * 生成图片校验码
+     * 生成校验码
      * @param request
      * @return
      */
-    ImageCode generate(ServletWebRequest request);
+    ValidateCode generate(ServletWebRequest request);
 }

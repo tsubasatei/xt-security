@@ -1,11 +1,9 @@
-package com.xt.security.core.validate.code;
+package com.xt.security.core.validate.code.exception;
 
 import org.springframework.security.core.AuthenticationException;
 
 /**
- * @author xt
- * @create 2019/11/25 22:14
- * @Desc
+ * 验证码异常类
  */
 public class ValidateCodeException extends AuthenticationException {
 

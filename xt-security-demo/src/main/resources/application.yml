@@ -28,7 +28,7 @@ server:
 #  security:
 #    browser:
 #      loginPage: /demo-singIn.html
-#       loginType: REDIRECT
+#       loginResponseType: REDIRECT
 #    code:
 #      image:
 #        length: 4

@@ -5,7 +5,14 @@ package com.xt.security.core.properties;
  * @create 2019/11/25 19:41
  * @Desc
  */
-public enum  LoginType {
+public enum LoginResponseType {
+    /**
+     * 跳转
+     */
     REDIRECT,
+
+    /**
+     * 返回json
+     */
     JSON
 }

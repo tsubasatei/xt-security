@@ -1,5 +1,6 @@
-package com.xt.security.core.validate.code;
+package com.xt.security.core.validate.code.image;
 
+import com.xt.security.core.validate.code.bean.ValidateCode;
 import lombok.Data;
 
 import java.awt.image.BufferedImage;
@@ -9,24 +10,19 @@ import java.time.LocalDateTime;
  * 图片验证码
  */
 @Data
-public class ImageCode {
+public class ImageCode extends ValidateCode {
+    /**
+     * 图片
+     */
     private BufferedImage image;
-    private String code;
-    private LocalDateTime expireTime;
 
     public ImageCode(BufferedImage image, String code, LocalDateTime expireTime) {
+        super(code, expireTime);
         this.image = image;
-        this.code = code;
-        this.expireTime = expireTime;
     }
 
     public ImageCode(BufferedImage image, String code, Integer expireIn) {
+        super(code, expireIn);
         this.image = image;
-        this.code = code;
-        this.expireTime = LocalDateTime.now().plusSeconds(expireIn);
-    }
-
-    public boolean isExpired() {
-        return LocalDateTime.now().isAfter(expireTime);
     }
 }

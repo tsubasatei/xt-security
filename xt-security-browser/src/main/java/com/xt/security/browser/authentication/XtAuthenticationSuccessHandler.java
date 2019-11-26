@@ -1,13 +1,12 @@
 package com.xt.security.browser.authentication;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.xt.security.core.properties.LoginType;
+import com.xt.security.core.properties.LoginResponseType;
 import com.xt.security.core.properties.SecurityProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
 
@@ -35,7 +34,7 @@ public class XtAuthenticationSuccessHandler extends SavedRequestAwareAuthenticat
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
         logger.info("登录成功");
 
-        if (securityProperties.getBrowser().getLoginType() == LoginType.JSON) {
+        if (securityProperties.getBrowser().getLoginResponseType() == LoginResponseType.JSON) {
             httpServletResponse.setContentType("application/json;charset=UTF-8");
             httpServletResponse.getWriter().write(objectMapper.writeValueAsString(authentication));
         } else {

@@ -1,8 +1,8 @@
-package com.xt.security.core.validate.code.impl;
+package com.xt.security.core.validate.code.image.impl;
 
 import com.xt.security.core.properties.SecurityProperties;
-import com.xt.security.core.validate.code.ImageCode;
-import com.xt.security.core.validate.code.ValidateCodeGenerator;
+import com.xt.security.core.validate.code.image.ImageCode;
+import com.xt.security.core.validate.code.generator.ValidateCodeGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
@@ -12,10 +12,13 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 /**
- * 图片校验码
+ * 生成图片校验码
  */
-public class ImageCodeGeneratorImpl implements ValidateCodeGenerator {
+public class ImageCodeGenerator implements ValidateCodeGenerator {
 
+    /**
+     * 系统配置
+     */
     @Autowired
     private SecurityProperties securityProperties;
 

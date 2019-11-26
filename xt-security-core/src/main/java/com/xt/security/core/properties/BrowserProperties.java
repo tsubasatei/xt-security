@@ -5,9 +5,11 @@ import lombok.Data;
 @Data
 public class BrowserProperties {
 
-    private String loginPage = "/xt-signIn.html";
+    private String signUpUrl = "/xt-signUp.html";
 
-    private LoginType loginType = LoginType.JSON;
+    private String loginPage = SecurityConstants.DEFAULT_LOGIN_PAGE_URL;
+
+    private LoginResponseType loginResponseType = LoginResponseType.JSON;
 
     private Integer rememberMeSeconds = 3600; // 记住我时间，单位：秒
 }
