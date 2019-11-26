@@ -37,6 +37,8 @@ public class BrowserSecurityConfig extends WebSecurityConfigurerAdapter {
 
         ValidationCodeFilter validationCodeFilter = new ValidationCodeFilter();
         validationCodeFilter.setAuthenticationFailureHandler(xtAuthenticationFailureHandler);
+        validationCodeFilter.setSecurityProperties(securityProperties);
+        validationCodeFilter.afterPropertiesSet();
         /**
          * 任何方法都验证
          */
